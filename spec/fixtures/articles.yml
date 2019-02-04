@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id         :bigint(8)        not null, primary key
+#  title      :string
+#  text       :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 1:
   title: ほげほげおい
   text: ぷぎゃあああああ
