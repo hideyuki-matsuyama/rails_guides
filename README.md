@@ -13,3 +13,7 @@
 - Rails 5.2.2
 - RSpec 3.8
 - postgres (PostgreSQL) 11.1
+
+### テスト実行
+
+- `bin/rspec`
