@@ -1,24 +1,19 @@
-# README
+## Rails on Rails ガイドに従ってコードを書いてみる
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### 概要
 
-Things you may want to cover:
+- [Ruby on Rails ガイド：体系的に Rails を学ぼう](https://railsguides.jp/)に沿ってコードを書いています
+- 復習やアレンジが主な目的です
+- 一部、些細な範囲でオリジナルと異なる手順やコードを含みます
+- commit comment単位で読むと少しだけ幸せになれるかもしれません
 
-* Ruby version
+### こんな環境で作ってます
 
-* System dependencies
+- ruby 2.6.0p0 (2018-12-25 revision 66547) [x86_64-darwin18]
+- Rails 5.2.2
+- RSpec 3.8
+- postgres (PostgreSQL) 11.1
 
-* Configuration
+### テスト実行
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- `bin/rspec`
