@@ -18,6 +18,6 @@
 #  fk_rails_...  (article_id => articles.id)
 #
 
-class Comment < ApplicationRecord
-  belongs_to :article
-end
+require 'rails_helper'
+
+xdescribe Comment, type: :model

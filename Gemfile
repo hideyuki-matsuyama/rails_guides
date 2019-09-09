@@ -51,6 +51,7 @@ group :development do
   gem 'spring-commands-rspec'
 
   gem 'rspec-rails'
+  gem 'annotate'
 end
 
 group :test do
@@ -58,6 +59,8 @@ group :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
 end
+
+gem 'rubocop', require: false
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

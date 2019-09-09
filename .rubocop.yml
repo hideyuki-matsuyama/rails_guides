@@ -1,0 +1,25 @@
+# Common configuration.
+
+AllCops:
+  Exclude:
+    - '.git/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'app/**/application_*.rb'
+    - 'bin/**/*'
+    - 'config.ru'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'node_modules/**/*'
+    - 'lib/tasks/*'
+    - 'spec/rails_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'vendor/**/*'
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Metrics/LineLength:
+  Enabled: false
+Style/AsciiComments:
+  Enabled: false
+Style/Documentation:
+  Enabled: false

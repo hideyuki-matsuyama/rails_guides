@@ -9,9 +9,6 @@
 #  updated_at :datetime         not null
 #
 
-1:
-  title: ほげほげおい
-  text: ぷぎゃあああああ
-2:
-  title: ういういうい
-  text: ですよね。
+require 'rails_helper'
+
+xdescribe Article, type: :model
