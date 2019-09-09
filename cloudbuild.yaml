@@ -1,3 +1,0 @@
-steps:
-- name: 'gcr.io/$PROJECT_ID/rails_guides:$SHORT_SHA'
-  args: ['/bin/bash', '/test.sh']
