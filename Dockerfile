@@ -1,5 +1,5 @@
 FROM postgres:11.5
-ARG RUBY_VERSION=2.6.0
+ARG RUBY_VERSION=2.6.4
 ENV PATH=/root/.rbenv/shims:$PATH
 
 RUN set -ex \
@@ -15,6 +15,8 @@ RUN set -ex \
         libffi-dev \
         libgdbm3 \
         libgdbm-dev \
+        autoconf \
+        bison \
         build-essential \
         software-properties-common \
     && mkdir -p "$(rbenv root)"/plugins \
@@ -23,8 +25,7 @@ RUN set -ex \
 
 WORKDIR /app
 
-RUN rbenv install -l \
-    && rbenv install $RUBY_VERSION \
+RUN rbenv install $RUBY_VERSION \
     && rbenv global $RUBY_VERSION \
     && gem install bundler \
     && rbenv rehash
