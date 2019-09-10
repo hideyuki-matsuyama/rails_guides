@@ -33,8 +33,7 @@ jobs:
       run: gem install bundler
 
     - name: Install dependent libralies
-      run: |
-        sudo apt-get install libpq-dev
+      run: sudo apt-get install libpq-dev
 
     - name: bundle install
       run: bundle install --jobs 4 --retry 3
