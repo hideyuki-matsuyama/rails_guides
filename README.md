@@ -1,4 +1,6 @@
-## Rails on Rails ガイドに従ってコードを書いてみる
+# Rails on Rails ガイドに従ってコードを書いてみる
+
+ <a href="https://github.com/hideyuki-matsuyama/rails_guides"><img alt="GitHub Actions status" src="https://github.com/hideyuki-matsuyama/rails_guides/workflows/Status/badge.svg"></a>
 
 ### 概要
 

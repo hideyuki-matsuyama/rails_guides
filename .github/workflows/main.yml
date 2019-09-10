@@ -1,4 +1,4 @@
-name: CI
+name: Status
 
 on: [push, pull_request]
 
