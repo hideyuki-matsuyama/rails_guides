@@ -7,9 +7,20 @@ jobs:
     name: Test
     strategy:
       matrix:
-        os: [ ubuntu-latest, windows-latest, macOS-latest ]
-        ruby: [ '2.6.0' ]
+        # os: [ ubuntu-latest, windows-latest, macOS-latest ]
+        os: [ ubuntu-latest ]
+        ruby: [ '2.6.3' ]
     runs-on: ${{ matrix.os }}
+
+    services:
+      postgres:
+        image: postgres:11
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
 
     steps:
     - uses: actions/checkout@v1
@@ -21,8 +32,25 @@ jobs:
     - name: Set up bundler
       run: gem install bundler
 
+    - name: Install dependent libralies
+      run: sudo apt-get install libpq-dev
+
     - name: bundle install
       run: bundle install --jobs 4 --retry 3
 
-    - name: test
-      run: bundle exec rspec
+    - name: Setup Database
+      run: |
+        cp config/database.yml.github-actions config/database.yml
+        bundle exec rake db:create
+        bundle exec rake db:schema:load
+      env:
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+
+    - name: Run rspec
+      run: COVERAGE=true bundle exec rspec --require rails_helper
+      env:
+        RAILS_ENV: test
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
