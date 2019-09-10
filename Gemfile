@@ -56,8 +56,8 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'chromedriver-helper'
-  gem 'selenium-webdriver'
+  gem 'webdrivers'
+  # gem 'selenium-webdriver'
 end
 
 gem 'rubocop', require: false
