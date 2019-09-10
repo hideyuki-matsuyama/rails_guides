@@ -33,7 +33,12 @@ jobs:
       run: gem install bundler
 
     - name: Install dependent libralies
-      run: sudo apt-get install libpq-dev
+      run: |
+        sudo apt-get install libpq-dev
+        curl -O https://chromedriver.storage.googleapis.com/77.0.3865.40/chromedriver_linux64.zip
+        unzip chromedriver_linux64.zip
+        sudo mv chromedriver /usr/local/bin/
+        sudo apt-get install chromium-browser
 
     - name: bundle install
       run: bundle install --jobs 4 --retry 3
