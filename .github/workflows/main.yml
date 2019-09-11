@@ -24,12 +24,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: Set up Ruby version
+    - name: Setup Ruby version
       uses: actions/setup-ruby@master
       with:
         version: ${{ matrix.ruby }}
 
-    - name: Set up bundler
+    - name: Setup bundler
       run: gem install bundler
 
     - name: Install dependent libralies
