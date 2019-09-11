@@ -12,6 +12,9 @@ jobs:
         ruby: [ '2.6.3' ]
     runs-on: ${{ matrix.os }}
 
+    - name: Install dependent libralies
+      run: sudo apt-get install libpq-dev
+
     services:
       postgres:
         image: postgres:11
@@ -31,9 +34,6 @@ jobs:
 
     - name: Setup bundler
       run: gem install bundler
-
-    - name: Install dependent libralies
-      run: sudo apt-get install libpq-dev
 
     - name: bundle install
       run: bundle install --jobs 4 --retry 3
